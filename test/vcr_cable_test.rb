@@ -45,4 +45,8 @@ class VcrCableTest < ActiveSupport::TestCase
     assert_not_match /VCR::Middleware::Rack/, list
   end
 
+  test 'adds VcrCable::CassetteMiddleware to middleware stack' do
+    assert Rails.configuration.middleware.any? {|name| name == 'VcrCable::CassetteMiddleware'}
+  end
+
 end

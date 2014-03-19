@@ -1,5 +1,6 @@
 require 'vcr'
 require 'vcr_cable/railtie' if defined? Rails
+require 'vcr_cable/cassette_middleware'
 
 module VcrCable
   extend self
@@ -48,4 +49,6 @@ module VcrCable
   def config_file
     @config_file ||= Rails.root.join 'config', CONFIG_FILE
   end
+
+
 end
